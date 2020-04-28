@@ -147,7 +147,6 @@ module.exports = {
         new FriendlyErrorsPlugin(),
         function() {
             this.hooks.done.tap('done', (stats) => {
-                console.log('do', stats.compilation.errors)
                 if(stats.compilation.errors && stats.compilation.errors.length && process.argv.indexOf('--watch') == -1)
                 {
                     console.log('build error');
